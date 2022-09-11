@@ -272,7 +272,7 @@ footer {
   cursor: pointer;
 }
 
-.portfolio-image-container-image img {
+.portfolio-image-container__image img {
   width: 100%;
   max-width: 400px;
   border: 1px solid black;
