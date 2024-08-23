@@ -1,15 +1,18 @@
 /*------------Colours----------------------------*/
 
 :root {
-  --background-color: #e7e8e7;
-  --header-color: #a69e9d;
+  --background-color: #f2f2f2;
+  --header-color: #4c5059;
+  --section-background-color: #c5ccd9;
 
-  /* RGB values of header-color which is then converted to an rgba value at 50% opacity when its used */
-  --section-background-color: 166, 158, 157;
+  --header-text-color: #f2f2f2;
+  --text-color: #4c5059;
+  --nav-hover-color: #c5ccd9;
 
-  --text-color: #403E3F;
+  --header-border-color: #c5ccd9;
+  --border-color: #4c5059;
 
-  --link-color: #734854;
+  --link-color: #03658c;
 }
 
 
@@ -26,22 +29,28 @@ body {
 }
 
 section {
-  background-color: rgba(var(--section-background-color), 0.5);
-  padding: 5px 15px;
+  padding: 5px 0;
   margin-bottom: 20px;
-  border-radius: 5px;
+}
+
+section h2 {
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--link-color);
+  margin-bottom: 10px;
 }
 
 
 /*------------Text Styles------------------------*/
 
-h2, h3, p, li, nav {
-  font-family: 'Dosis', sans-serif;
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 10px;
   color: var(--text-color);
 }
 
-h2 {
-  margin-top: 10px;
+h3, p, li, nav {
+  font-family: 'Dosis', sans-serif;
+  color: var(--text-color);
 }
 
 a {
@@ -56,13 +65,13 @@ a:visited {
 /*------------Site Title Styles------------------*/
 
 .header-container {
-  border-top: 15px solid var(--background-color);
-  background-color: rgba(var(--section-background-color), 0.5);
-  padding: 10px 0 12px 0;
+  background-color: var(--header-border-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-bottom: 4px solid var(--link-color);
 }
 
 header {
-  height: 120px;
+  min-height: 120px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -72,30 +81,57 @@ header {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 830px) {
+  header {
+    flex-direction: column;
+  }
+}
+
 .site-title {
   margin: 10px 0 0 20px;
   padding: 10px 15px;
-  float: left;
   text-align: left;
 }
 
+.site-title a,
+.site-title a:visited {
+  text-decoration: none;
+}
+
 .site-title h1, .site-title h2 {
-  color: var(--text-color);
+  color: var(--header-text-color);
   font-weight: normal;
+  text-shadow: 1px 1px 2px var(--link-color);
 }
 
 .site-title h1 {
-  font-size: 2.1em;
+  font-size: 2.5rem;
   margin: 0 0 10px 0;
-  font-family: 'Yellowtail', cursive;
-  border-bottom: 2px solid var(--text-color);
-  padding-bottom: 7px;
+  border-bottom: 2px solid var(--header-text-color);
+  font-family: "Oooh Baby", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .site-title h2 {
-  font-size: 1em;
+  font-size: 1rem;
   margin: 0;
   text-transform: uppercase;
+  font-family: 'Dosis', sans-serif;
+}
+
+@media only screen and (max-width: 480px) {
+  .site-title {
+    margin: 10px 0 0 0;
+  }
+
+  .site-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .site-title h2 {
+    font-size: 1rem;
+  }
 }
 
 
@@ -106,6 +142,7 @@ nav {
   padding-right: 20px;
   text-transform: uppercase;
   text-align: right;
+  text-shadow: 1px 1px 2px var(--link-color);
 }
 
 nav ul {
@@ -118,52 +155,74 @@ nav li {
   display: inline-block;
   margin: 15px 10px 10px;
   padding: 10px;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   text-align: center;
 }
 
 nav a,
 nav a:visited {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--header-text-color);
+  padding-bottom: 4px;
 }
 
 nav a.selected,
 nav a:visited.selected {
-  color: var(--background-color);
+  color: var(--nav-hover-color);
+  border-bottom: 2px solid var(--nav-hover-color);
 }
 
 nav a:hover {
-  color: var(--background-color);
+  color: var(--nav-hover-color);
 }
 
 
 /*------------Footer Styles----------------------*/
 
 footer {
-  border-top: 1px dashed var(--text-color);
+  background-color: var(--header-color);
+  border-top: 4px solid var(--link-color);
   text-align: center;
+  padding: 0 10px 10px 10px;
+}
+
+footer p {
+  color: var(--header-text-color);
+}
+
+footer a,
+footer a:visited,
+footer a:hover {
+  color: var(--header-text-color);
 }
 
 
 /*------------Index Page Styles--------------------*/
 
-.feature-image {
-  margin: 40px;
-  background-color: rgba(var(--section-background-color), 0.5);
-  padding: 15px;
+.feature-image-container {
+  margin: 40px auto;
+  padding: 10px;
   max-width: 850px;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .feature-image img {
-  max-width: 100%;
-  height: auto;
-  background-color: rgba(var(--section-background-color), 0.5);
+  width: 100%;
 }
 
-.feature-image p {
+.feature-image-container p {
   font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  margin: 10px 10px 5px 10px;
 }
 
 
@@ -192,15 +251,6 @@ footer {
 
 .contact-info a {
   display: block;
-  min-height: 20px;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  padding: 0 0 0 30px;
-  margin: 0 0 10px;
-}
-
-.contact-info li.email a {
-  background-image: url('../images/mail.png');
 }
 
 
@@ -208,6 +258,8 @@ footer {
 
 .category-name {
   margin: 20px 0 40px 0;
+  border-bottom: 2px solid var(--link-color);
+  padding-bottom: 4px;
 }
 
 .category-name a,
@@ -229,30 +281,25 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .portfolio {
-  width: 250px;
-  border-radius: 10px;
-  background-color: rgba(var(--section-background-color), 0.5);
-  margin: 10px;
-  border-radius: 5px;
+  width: 300px;
+  background-color: var(--header-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .portfolio img {
   width: 100%;
   padding: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
 
 .portfolio p {
-  color: var(--text-color);
+  color: var(--header-text-color);
   font-family: 'Josefin Sans', sans-serif;
   margin: 0;
   padding: 10px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
 
@@ -261,11 +308,10 @@ footer {
 .portfolio-image-container {
   display: flex;
   flex-direction: row;
+  gap: 30px;
   margin-bottom: 40px;
-  padding-bottom: 40px;
-  padding: 15px;
-  background-color: rgba(var(--section-background-color), 0.5);
-  border-radius: 5px;
+  padding: 10px 10px 40px 10px;
+  border-bottom: 2px solid var(--link-color);
 }
 
 .portfolio-image-container__image {
@@ -275,20 +321,22 @@ footer {
 .portfolio-image-container__image img {
   width: 100%;
   max-width: 400px;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .portfolio-image-container__image-title {
   margin: 5px 0 15px;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.3em;
-  color: #474143;
+  font-size: 1.3rem;
   padding-bottom: 4px;
-  border-bottom: 1px solid #474143;
+  border-bottom: 2px solid var(--link-color);
 }
 
-.portfolio-image-container__description {
-  margin-left: 40px;
+@media only screen and (max-width: 830px) {
+  .portfolio-image-container {
+    flex-direction: column;
+  }
 }
 
 /*------------Portfolio Lightbox Styles--------------------*/
