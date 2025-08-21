@@ -2,10 +2,11 @@ const overlay = document.createElement('div');
 overlay.setAttribute('id', 'overlay');
 
 const close = document.createElement('p');
-close.innerText = 'Click anywhere to close';
+close.innerText = 'x';
 close.style.textAlign = 'right';
+close.style.marginTop = '20px';
 close.style.marginRight = '20px';
-close.style.fontSize = '0.75em';
+close.style.fontSize = '2rem';
 
 const image = document.createElement('img');
 const caption = document.createElement('p');
