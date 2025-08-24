@@ -202,7 +202,7 @@ footer a:hover {
 .feature-image-container {
   margin: 40px auto;
   padding: 10px;
-  max-width: 750px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
 }
@@ -307,7 +307,7 @@ footer a:hover {
 
 .portfolio-image-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 30px;
   margin-bottom: 40px;
   padding: 10px 10px 40px 10px;
@@ -320,7 +320,7 @@ footer a:hover {
 
 .portfolio-image-container__image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 800px;
   border: 1px solid var(--border-color);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -329,8 +329,6 @@ footer a:hover {
   margin: 5px 0 15px;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.3rem;
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--link-color);
 }
 
 @media only screen and (max-width: 830px) {
