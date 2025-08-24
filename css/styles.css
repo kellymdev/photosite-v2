@@ -319,7 +319,6 @@ footer a:hover {
 }
 
 .portfolio-image-container__image img {
-  width: 100%;
   max-width: 800px;
   border: 1px solid var(--border-color);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
